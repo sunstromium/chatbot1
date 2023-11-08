@@ -33,6 +33,21 @@ function sendMessage() {
         }, 2000);
         return;
     }
+      else if (message === 'hi') {
+        // clear input value
+        userInput.value = '';
+        // append message as user - we will code it's function
+        appendMessage('user', message);
+        // sets a fake timeout that showing loading on send button
+        setTimeout(() => {
+            // send our message as bot(sender : bot)
+            appendMessage('bot', 'Hello user i am SaiGPT...:)');
+            // change button icon to default
+            buttonIcon.classList.add('fa-solid', 'fa-square-arrow-up-right');
+            buttonIcon.classList.remove('fas', 'fa-spinner', 'fa-pulse');
+        }, 2000);
+        return;
+    }
 
     // else if none of above
     // appends users message to screen
