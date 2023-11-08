@@ -1,0 +1,354 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+        <title>
+           TIME  AYIPAYE ⌛
+        </title>
+    </head>
+    <body>
+        
+        <div id="error-box">
+            <div id="circles">
+              <div class="circle-box" id="circle1">
+                <div class="circle-shadow"></div>
+                <div class="circle">
+                    <div class="semicircle hide top"></div>
+                    <div class="semicircle bottom"></div>
+                </div>
+              </div>
+          
+              <div class="circle-box" id="circle2">
+                <div class="circle">
+                    <div class="semicircle top"></div>
+                    <div class="semicircle hide bottom"></div>
+                </div>
+                <div class="circle-shadow"></div>
+              </div>
+              
+              <div class="guy">
+                <div class="body-part head"></div>
+                <div class="body-part body"></div>
+          
+                <div class="arms left-arm">
+                  <div class="body-part upper-arm"></div>
+                  <div class="body-part forearm"></div>
+                </div>
+                <div class="arms right-arm">
+                  <div class="body-part upper-arm"></div>
+                  <div class="body-part forearm"></div>
+                </div>
+          
+                <div class="legs left-leg">
+                  <div class="body-part thigh"></div>
+                  <div class="body-part calf"></div>
+                </div>
+                <div class="legs right-leg">
+                  <div class="body-part thigh"></div>
+                  <div class="body-part calf"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div id="text">
+              <div id="border-top"></div>
+              <h1>Whoops! What are you doing here?</h1>
+          <br><br><br><br><br>
+              <p>Did you  took long time to scan the qr? No problem.  </p>
+
+              <a href="sai.html" style="color: white; text-decoration: none;"> <h1>go back to payment page</h1></a>
+            </div>
+          </div>
+          
+          
+<style>
+    
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+:root {
+  --bgcolor: #222;
+  --fgcolor: #fff;
+  --objcolor: #666;
+  --circle-size: 200px;
+  --circle-ratio: 2.5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--bgcolor);
+  color: var(--fgcolor);
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#error-box {
+  margin: 120px auto 0 auto;
+  padding: 2em 3em;
+  max-width: 1000px;
+  max-height: 360px;
+  border: 3px solid;
+  border-image: linear-gradient(to bottom, transparent, var(--objcolor), transparent) 1 100%;
+
+  h1 {
+    font-size: 30px;
+    padding-bottom: 0.8em;
+  }
+
+  p {
+    margin-bottom: 1.3em;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--objcolor);
+  }
+
+  ul {
+    padding-left: 1em;
+  }
+
+  li {
+    margin: 1em 0;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+#circles {
+  float: left;
+  width: var(--circle-size);
+}
+
+#circle1 {
+  margin-top: -250px;
+}
+
+#circle2 {
+  margin-top: 250px;
+}
+
+#text {
+  float: right;
+  width: calc(100% - var(--circle-size) - 6em);
+}
+
+.circle-box {
+  position: relative;
+  width: 100%;
+  height: calc(var(--circle-size) / var(--circle-ratio) + 200px);
+  overflow: hidden;
+
+  .semicircle.hide, .circle-shadow {
+    position: relative;
+    z-index: 100;
+  }
+
+  .circle-shadow {
+    width: 100%;
+    height: calc(100% - (var(--circle-size) / var(--circle-ratio)));
+    background-color: var(--bgcolor);
+  }
+
+  .circle {
+    overflow: hidden;
+    height: calc(var(--circle-size) / var(--circle-ratio));
+    width: 100%;
+
+    .semicircle {
+      height: 50%;
+
+      &.top, &.bottom {
+        border: 2px solid var(--objcolor);
+      }
+
+      &.top {
+        border-top-left-radius: 50% 100%;
+        border-top-right-radius: 50% 100%;
+        border-bottom: none;
+
+        &.hide {
+          box-shadow: 0 -2000px 0 2000px var(--bgcolor);
+        }
+      }
+
+      &.bottom {
+        border-bottom-left-radius: 50% 100%;
+        border-bottom-right-radius: 50% 100%;
+        border-top: none;
+
+        &.hide {
+          box-shadow: 0 2000px 0 2000px var(--bgcolor);
+        }
+      }
+    }
+  }
+}
+
+.guy {
+  /* //display: none; */
+  position: relative;
+  left: 35%;
+  animation: fall 2s linear infinite;
+
+  .body-part {
+    background-color: var(--objcolor);
+    border-radius: 10px;
+  }
+
+  .head {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+
+  .body {
+    width: 30px;
+    height: 60px;
+    transform: rotate(-20deg);
+    margin-left: 15px;
+  }
+
+  .arms {
+    animation: upper-arms 1s linear infinite;
+    transform-origin: 7.5px 7.5px;
+    border: 1px solid transparent;
+    position: absolute;
+  }
+
+  .left-arm {
+    top: 28px;
+    left: 12px;
+  }
+
+  .right-arm {
+    top: 26px;
+    left: 16px;
+    animation-delay: 0.5s;
+  }
+
+  .upper-arm {
+    width: 15px;
+    height: 40px;
+  }
+
+  .forearm {
+    width: 15px;
+    height: 35px;
+    margin-top: -15px;
+    transform-origin: 7.5px 7.5px;
+    animation: forearms 1s linear infinite;
+  }
+
+  .right-arm .forearm {
+    animation-delay: 0.5s;
+  }
+
+  .legs {
+    animation: legs 1s linear infinite;
+    transform-origin: 7.5px 7.5px;
+    border: 1px solid transparent;
+    position: absolute;
+  }
+
+  .left-leg {
+    top: 70px;
+    left: 22px;
+  }
+
+  .right-leg {
+    top: 66px;
+    left: 35px;
+    animation-delay: 0.5s;
+  }
+
+  .thigh {
+    width: 15px;
+    height: 45px;
+  }
+
+  .calf {
+    width: 15px;
+    height: 40px;
+    margin-top: -15px;
+    transform-origin: 7.5px 7.5px;
+    animation: calves 1s linear infinite;
+  }
+
+  .right-leg .calf {
+    animation-delay: 0.5s;
+  }
+}
+
+@keyframes upper-arms {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(60deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes forearms {
+  0% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(50deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes legs {
+  0% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes calves {
+  0% {
+    transform: rotate(-90deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes fall {
+  0% {
+    top: -800px;
+  }
+  100% {
+    top: -200px;
+  }
+}
+
+</style>          
+    </body>
+</html>

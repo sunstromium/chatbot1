@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color:  rgba(8, 237, 111, 0.774);
+
+        }
+
+        .mobile-frame {
+            width: 300px;
+            height: 600px;
+            background-color: #000;
+            border: 10px solid #222;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            background-image: url('./qr.jpeg');
+            background-size: cover;
+            border: 5px solid #fff;
+            border-radius: 10px;
+        }
+
+        .timer-container {
+            width: 150px; /* Half of the frame width */
+            height: 10px;
+            background-color: rgb(7, 85, 42); /* Green color */
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            animation: fill 40s linear forwards;
+        }
+
+        @keyframes fill {
+            0% {
+                left: 0;
+                width: 0;
+            }
+            100% {
+                left: 0;
+                width: 298px; /* Half of the frame width */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-frame">
+        <h1 style="text-align: center; color: #fff; padding: 10px;">Scan QR to Pay</h1>
+        <div class="qr-code"></div>
+        <div class="timer-container"></div>
+    </div>
+    <script>
+        setTimeout(function () {
+            // Redirect to sai.html when the time is up
+            window.location.href = "fasak.html";
+        }, 40000); // 40 seconds in milliseconds
+    </script>
+</body>
+</html>
