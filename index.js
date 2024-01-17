@@ -59,8 +59,8 @@ function sendMessage() {
         // 😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋😋
         headers: {
             'content-type': 'application/json',
-            'X-RapidAPI-Key': 'a52b7ab635mshc98ffddab071ee9p1c03bajsn1d06ac0ca799',
-            'X-RapidAPI-Host': 'chatgpt53.p.rapidapi.com'
+            'X-RapidAPI-Key': 'your rapid api key',
+            'X-RapidAPI-Host': 'bla bla'
             // if you want use official api
             /*
             'content-type': 'application/json',
